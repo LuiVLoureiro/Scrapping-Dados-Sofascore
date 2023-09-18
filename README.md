@@ -25,10 +25,10 @@ A seguir, estão as principais partes do código:
 servico = Service(ChromeDriverManager().install())
 navegador = webdriver.Chrome(service=servico)
 
-\```python
+```python
 # Caminho para a pasta onde você deseja salvar os dados
 pasta_base = 'Dados'
 if not os.path.exists(pasta_base):
     os.makedirs(pasta_base)
-\```
+```
 
