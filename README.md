@@ -17,4 +17,18 @@ O usuário insere a URL da liga desejada.
 A aplicação raspa os dados dos times, jogadores e suas estatísticas das partidas.
 Os dados são armazenados em arquivos separados.
 
+# Especificações do Código
+A seguir, estão as principais partes do código:
+
+### Configurações Iniciais
+# Configurações Iniciais ChromeDriver
+servico = Service(ChromeDriverManager().install())
+navegador = webdriver.Chrome(service=servico)
+
+\```python
+# Caminho para a pasta onde você deseja salvar os dados
+pasta_base = 'Dados'
+if not os.path.exists(pasta_base):
+    os.makedirs(pasta_base)
+\```
 
