@@ -21,14 +21,57 @@ Os dados são armazenados em arquivos separados.
 A seguir, estão as principais partes do código:
 
 ### Configurações Iniciais
-# Configurações Iniciais ChromeDriver
+### Configurações Iniciais ChromeDriver
 servico = Service(ChromeDriverManager().install())
 navegador = webdriver.Chrome(service=servico)
 
 ```python
+# Configurações Iniciais ChromeDriver
+servico = Service(ChromeDriverManager().install())
+navegador = webdriver.Chrome(service=servico)
+
 # Caminho para a pasta onde você deseja salvar os dados
 pasta_base = 'Dados'
 if not os.path.exists(pasta_base):
     os.makedirs(pasta_base)
 ```
+
+### Coleta de Dados dos Times
+
+```python
+# Coleta de dados dos times
+elementos_href = soup.find_all('a', href=lambda href: href and '/team/football/' in href)
+links_times = set()
+
+for elemento in elementos_href:
+    links_times.add(elemento['href'])
+```
+
+### Coleta de Dados dos Jogadores
+```python
+# Coleta de dados dos jogadores
+elementos_jogadores = soup.find_all('a', href=lambda href: href and '/player/' in href)
+nomes_jogadores = []
+links_jogadores = set()
+
+for elemento in elementos_jogadores:
+    links_jogadores.add(elemento['href'])
+```
+
+###Coleta de Dados das Partidas
+```python
+# Coleta de dados das partidas
+for jogador in links_jogadores:
+    # ...
+    for links_partidas in partidas:
+        # ...
+        try:
+            estatisticas = soup.select_one("#__next > main > div.sc-fqkvVR.sc-dcJsrY.RLTNV.hjYsRn > div > div > div > div.sc-fqkvVR.sc-dLMFU.fLrHMT.gVgUiK.ps.ps--active-y > div:nth-child(1) > div > div:nth-child(3)").get_text()
+            # ...
+        except:
+            # Tratamento de erros
+            # ...
+```
+
+Este projeto demonstra habilidades em raspagem de dados, manipulação de páginas web e tratamento de erros. Mostrando a capacidade de desenvolver soluções de automação para coletar informações da web de maneira eficiente e organizada.
 
