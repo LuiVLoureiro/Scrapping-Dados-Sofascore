@@ -4,7 +4,7 @@ Este projeto é uma aplicação Python que utiliza as bibliotecas Selenium e Bea
 
 ![Fluxograma](https://github.com/LuiVLoureiro/Scrapping-Dados-Sofascore/assets/103609685/15b0d6dd-115e-4777-9fc6-d3a37ed3e981)
 
-# Resumo para Recrutadores
+# Resumo
 ### Objetivo: Criar uma aplicação Python para coletar estatísticas de jogadores e times de futebol do Sofascore.
 ### Tecnologias Utilizadas: Selenium, Beautiful Soup, Python.
 ### Funcionalidades:
